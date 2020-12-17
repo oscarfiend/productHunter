@@ -1,3 +1,7 @@
+# Product Hunter clon
+Este es un clon de la pagina de product hunter con algunas funcionalidades como logueo, autenticacion, creacion de productos con comentarios y votaciones. 
+los datos son almacenados en firestore. 
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
