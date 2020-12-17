@@ -10,6 +10,7 @@ const useForm = (stateInicial,validar,fn) => {
         if(submitForm){
             const noErrores=Object.keys(errores).length===0;
             if(noErrores){
+                reset()
                 fn();
             }
             setSubmitForm(false)
@@ -24,6 +25,10 @@ const useForm = (stateInicial,validar,fn) => {
         })
     }
 
+    const reset=()=>{
+        setValores(stateInicial)
+    }
+
     //funcion que se ejecuta cunado el usuario hace submit
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -33,12 +38,17 @@ const useForm = (stateInicial,validar,fn) => {
         
     }
 
+    const hadleBlur=()=>{
+        const erroresValidacion=validar(valores)
+        setErrores(erroresValidacion)
+    }
+
     return {
         valores,
         errores,
-        submitForm,
         handleSubmit,
-        handleChange
+        handleChange,
+        hadleBlur
     }
 }
 
